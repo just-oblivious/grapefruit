@@ -1,0 +1,36 @@
+💭 License: MIT
+💭 Grapefruit requests your public IP from ip-api.com and echos it to the console
+💭 Language reference: https://www.emojicode.org/docs/reference
+
+📦 sockets 🏠
+
+🏁 ➡️ 🔢 🍇
+    😀 🔤Requesting public IP from ip-api.com...🔤❗️
+
+    💭 Dial ip-api.com on port 80
+    🍺 🆕📞 🔤ip-api.com🔤 80❗️ ➡️ sock
+
+    💭 Send HTTP request
+    🍺 💬 sock 📇 🔤GET /line/?fields=8192 HTTP/1.1❌r❌nHost: ip-api.com❌r❌n❌r❌n🔤❗️❗️
+
+    💭 Listen for a response
+    🍺 👂 sock 1500❗️ ➡️ data
+    🍺 🔡 data❗️➡️ response
+
+    💭 Split response by CRLF as defined in the HTTP spec (RFC2616)
+    🔫 response 🔤❌r❌n🔤❗️ ➡️ responseLines
+
+    💭 Output the first line after the first blank line (i.e. the first line of the response body)
+    👎 ➡️ 🖍🆕 readHeader
+
+    🔂 line responseLines 🍇
+         ↪️ readHeader 🍇
+            😀 🔧line❗️❗️
+            ↩️ 0
+        🍉
+        ↪️ 📐line❗️ 🙌 0 🍇
+            👍 ➡️ 🖍 readHeader
+        🍉
+    🍉
+    ↩️ 1
+🍉
